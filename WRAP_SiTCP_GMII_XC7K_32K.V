@@ -1,3 +1,4 @@
+`default_nettype wire
 /**************************************************************************************
 *                                                                                     *
 *       Wrapper of the OPEN-SiTCP library for BBT                                     *
@@ -182,7 +183,7 @@ module WRAP_SiTCP_GMII_XC7K_32K(
 
 	assign	MY_TCP_PORT[15:0]	= (~FORCE_DEFAULTn | (EXT_TCP_PORT[15:0]==16'd0)	? DEFAULT_TCP_PORT[15:0]	: EXT_TCP_PORT[15:0]	);
 	assign	MY_RBCP_PORT[15:0]	= (~FORCE_DEFAULTn | (EXT_RBCP_PORT[15:0]==16'd0)	? DEFAULT_RBCP_PORT[15:0]	: EXT_RBCP_PORT[15:0]	);
-	assign	MY_IP_ADDR[31:0]	= (~FORCE_DEFAULTn | (EXT_IP_ADDR[31:0]==32'd0) 	? DEFAULT_IP_ADDR[31:0]		: EXT_IP_ADDR[31:0]		);
+	assign	MY_IP_ADDR[31:0]	= EXT_IP_ADDR[31:0];
 
     wire    [47:0]  TCP_SERVER_MAC      ;
     wire    [31:0]  TCP_SERVER_ADDR     ;
